@@ -8,3 +8,45 @@ I'll be using the following tools:
 
 Here's my twitter @chelseyachubb
 
+
+## Day 1 : Functions
+
+I'm starting a bit in the middle of my learning journey, so my first day will reflect that pretty heavily. So far I've been working on Codeacademy's Create a Backend App with JS, [here](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript)
+- Paramaters 
+- Arguments
+- Default Parameters
+- Return
+- Helper Functions
+- Arrow Functions
+- Concise Body Arrow Functions
+
+Thus far I've done intro to JS API, and Conditionals, as well as 80% of functions. 
+
+Functions are just reusible blocks of code that performs a specific task. For example:
+
+```javascript
+function greetWorld() {
+  console.log('Hello, World!');
+}
+```
+I also learned _bad_ practice, aka hoisting. I'm sure I'll make this mistake a few times, but we shouldn't be calling a function before it's defined. So for example, calling console log before the function is not great. 
+
+```javascript
+console.log(greetWorld()); //this is bad practice!
+
+function greetWorld() {
+consol.log('Hello World!');
+}
+```
+
+That's pretty basic code. But we can also add parameters. Parameters allow the function to accept input, and act like variables within a function. I'm a visual learner, so mapping things out like this helps:
+
+![Parameters](https://cdn.zappy.app/463810aea70a426ab8294016d7eee43e.png)
+
+Then, we'll pass through an argument, which is the specific values or variables passed to the function, for example:
+
+```javascript
+calculateArea(10,6);
+```
+
+
