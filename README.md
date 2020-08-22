@@ -4,9 +4,6 @@ I'm creating this to document my work on 100 days of code.
 I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
-- [Glitch](https://glitch.com)
-
-Here's my twitter @chelseyachubb
 
 
 ## Day 1 : Functions
@@ -89,4 +86,4 @@ And then we can get even more concise by using arrow functions, like this:
 
 ![function arrows](https://cdn.zappy.app/6a7fe0daaa2fa4f796cc5387216e56a4.png)
 
-
+This is pretty basic, and a lot of simple learnings here, without a lot of building, but writing it out is helping it stick, so I'm very excited for DAY 2! 
