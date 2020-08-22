@@ -11,8 +11,9 @@ Here's my twitter @chelseyachubb
 
 ## Day 1 : Functions
 
-I'm starting a bit in the middle of my learning journey, so my first day will reflect that pretty heavily. So far I've been working on Codeacademy's Create a Backend App with JS, [here](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript)
-- Paramaters 
+I'm starting a bit in the middle of my learning journey, so my first day will reflect that pretty heavily. So far I've been working on Codeacademy's Create a Backend App with JS, [here](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript).
+Here's what I'm covering today:
+- Parameters 
 - Arguments
 - Default Parameters
 - Return
@@ -20,7 +21,7 @@ I'm starting a bit in the middle of my learning journey, so my first day will re
 - Arrow Functions
 - Concise Body Arrow Functions
 
-Thus far I've done intro to JS API, and Conditionals, as well as 80% of functions. 
+Codeacademy provides super helpful 'cheatsheets', here's the functions cheatsheet for my lessons today [Functions](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript/tracks/bapi-javascript-conditionals-and-functions/modules/learn-javascript-functions/cheatsheet)
 
 Functions are just reusible blocks of code that performs a specific task. For example:
 
@@ -39,7 +40,7 @@ consol.log('Hello World!');
 }
 ```
 
-That's pretty basic code. But we can also add parameters. Parameters allow the function to accept input, and act like variables within a function. I'm a visual learner, so mapping things out like this helps:
+That's pretty basic code. But we can also add parameters. Parameters allow the function to accept input, and act like variables within a function. This allows you to call a function over and over with different inputs. I'm a visual learner, so mapping things out like this helps:
 
 ![Parameters](https://cdn.zappy.app/463810aea70a426ab8294016d7eee43e.png)
 
@@ -48,5 +49,15 @@ Then, we'll pass through an argument, which is the specific values or variables 
 ```javascript
 calculateArea(10,6);
 ```
+For a boring way to practice, I created a function to detect how many cells are in a specific Google Sheet. Say I have 4 rows and 5 columns:
+![sheets]:(https://cdn.zappy.app/7757d593befe499d63744bc66bad78fa.png)
 
+I could count by hand, or I could use this function:
 
+'''javascript
+function cellCount(rows,columns){
+  return rows * columns
+}
+const numOfcells = cellCount(5, 4);
+console.log(numOfCells);
+```
