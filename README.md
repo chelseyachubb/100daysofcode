@@ -6,6 +6,208 @@ I'll be using the following tools:
 - [Zappy](https://zapier.com/zappy)
 
 
+## Day 2: Rock, Paper, Scissors
+
+For day 2, I am applying what I've learned about basic js api, functions, and conditional statements to create a game of rock, paper, scissors.
+
+
+Our code will break the game into four parts:
+1.  Get the user’s choice.
+2. Get the computer’s choice.
+3. Compare the two choices and determine a winner.
+4. Start the program and display the results.
+
+Here are the rules:
+The possible outcomes are:  
+- Rock destroys scissors
+- Scissors cut paper
+- Paper covers rock
+- If there’s a tie, then the game ends in a draw
+
+### Get the user's choice
+
+First I need to get the users choice, so I create a function that takes user input, called 'getUserChoice'. Since a user might type in all caps, no caps, or capitalized, I want to make sure things are consistent, so I use the .toLowerCase() method to make sure the entire word is in lower case. I also want to check that the user actually input rock or paper or scissors, so I check to make sure they did and output an error if they did not
+
+```javascript
+const getUserChoice = userInput => {
+  userInput = userInput.toLowerCase();// make it consistently all lowercase
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') { //make sure the input is rock/paper/scissors
+    return userInput
+  } else {
+    console.log('Error. Please type rock paper or scissors') //if it's not rock/paper/scissors output error message
+
+  }
+}
+```
+
+I can test to make sure this code is correct by trying the following:
+
+``` javascript
+console.log(getUserChoice('paper')); //this tests to make sure paper is properly output, and in lowercase
+console.log(getUserChoice('testing')); //this tests to make sure the error message appears
+```
+
+### Get Computer's Choice
+
+Next I need to get a computer choice. To do this, I can use a combination of Math.random(), Math.Floor() and switch or if else statements. First I'll start by declaring a function called getComputer Choice, and then I will use Math.random()* 3, to get a number between 1-3. I multiply by 3 because Math.random will return a number between 0 and .99, and I use Math.floor because I want an even number between 1 and 3, not 1.2343545 for example. 
+
+``` javascript
+const getComputerChoice = () => {
+    const randomNumber = Math.floor(Math.random()* 3);
+}
+```
+Now that I have the random number, I need to determine whether the number is equal to rock, paper or scissors. I _could_ achieve this with an if/else but I could also make it slightly cleaner using a switch statement, like this:
+``` javascript
+const getComputerChoice = () => {
+  const randomNumber = Math.floor(Math.random()* 3);
+  switch(randomNumber) {
+    case 0 : 
+      return 'rock';
+      break;
+    case 1: 
+      return 'paper';
+      break;
+    case 2: 
+      return 'scissors';
+      break;
+  }
+};
+```
+I can test this by using console.log, like this:
+
+``` javascript
+console.log(getComputerChoice());
+```
+
+To see that I get a value of paper,rock or scissors. 
+
+### Determining who won
+
+So far I've set the stage for the user's choice, and the computers choice, and the next part is to compare them. This is the part I struggled on most. I was following if else statements all the way up until they were nested. I was trying to compare too many values at once. In other words, I was trying to take every scenario and nest it, instead of simplifying. So I took a little bit of space away from the problem and read up on nested ifs and it turns out it's relativly simple. 
+
+If the user has rock and the computer has paper, the computer wins, otherwise, the user wins. There's only two options. This was a major facepalm but here was my resulting code;
+
+```javascript
+const determineWinner = (userChoice,computerChoice) => {
+  if (userChoice === computerChoice) {
+    return 'Tie game!'
+  } 
+  if(userChoice === 'rock') {
+    if(computerChoice === 'paper') {
+      return 'Sorry, computer won' //if the first and second condition are true, return 'you computer won' otherwise, return 'you won'
+    } else {
+      return 'congrats, you won!';
+    }
+  }
+  if(userChoice === 'paper') {
+    if(computerChoice === 'scissors') {
+      return 'Computer won!'
+    } else {
+      return 'You won!'
+    }
+  }
+  if (userChoice === 'scissors') {
+    if(computerChoice === 'paper') {
+      return 'You won!' 
+      } else {
+        return 'Computer won wah wah!'
+      }
+    }
+  };
+```
+
+### Putting all the pieces together
+
+The last part I had to complete was to create a function called playGame, which logs what the user and computer threw, as well as who won. Here's the final bit:
+```javascript
+const playGame = () => { //declaring the function
+   const userChoice = 
+getUserChoice('scissors'); //setting users choice to scissors
+   const computerChoice = 
+getComputerChoice(); //getting computer choice using the code created earlier
+   console.log('You threw: ' + userChoice); //logging users choice
+   console.log('The computer threw:' + computerChoice);// logging computers choice
+   console.log(determineWinner(userChoice, computerChoice)); //logging winner!
+};
+
+playGame(); //initiating game
+```
+
+Here's the final code for the full game: 
+``` javascript
+const getUserChoice = userInput => {
+  userInput = userInput.toLowerCase();// make it consistently all lowercase
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors'|| userInput === 'bomb') {
+    return userInput;
+  } else {
+    console.log('Error. Please type rock paper or scissors')
+
+  }
+};
+
+const getComputerChoice = () => {
+  const randomNumber = Math.floor(Math.random()* 3);
+  switch(randomNumber) {
+    case 0 : 
+      return 'rock';
+      break;
+    case 1: 
+      return 'paper';
+      break;
+    case 2: 
+      return 'scissors';
+      break;
+  }
+};
+
+const determineWinner = (userChoice,computerChoice) => {
+  if(userChoice === 'bomb'){
+    return 'hot dang, it\'s a bomb, you win!'
+  }
+  if (userChoice === computerChoice) {
+    return 'Tie game!'
+  } 
+  if(userChoice === 'rock') {
+    if(computerChoice === 'paper') {
+      return 'Sorry, computer won'
+    } else {
+      return 'congrats, you won!';
+    }
+  }
+  if(userChoice === 'paper') {
+    if(computerChoice === 'scissors') {
+      return 'Computer won!'
+    } else {
+      return 'You won!'
+    }
+  }
+  if (userChoice === 'scissors') {
+    if(computerChoice === 'paper') {
+      return 'You won!' 
+      } 
+        else {
+        return 'Computer won wah wah!'
+      }
+    }
+  };
+const playGame = () => {
+   const userChoice = 
+getUserChoice('bomb');
+   const computerChoice = 
+getComputerChoice();
+   console.log('You threw: ' + userChoice);
+   console.log('The computer threw:' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
+```
+
+### Learnings:
+
+1. Following along is not the same thing as understanding. I got all the way to this project by following along, but once I put it into action, I didn't understand. This made me go back several times and figure out the why behind each function and code block.
+2. 
+
 ## Day 1 : Functions
 
 I'm starting a bit in the middle of my learning journey, so my first day will reflect that pretty heavily. So far I've been working on Codeacademy's Create a Backend App with JS, [here](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript).
