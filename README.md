@@ -206,7 +206,8 @@ playGame();
 ### Learnings:
 
 1. Following along is not the same thing as understanding. I got all the way to this project by following along, but once I put it into action, I didn't understand. This made me go back several times and figure out the why behind each function and code block.
-2. 
+2. Breaks are important. Take small bite sized chunks and then learn about those, and then use those like little legos to build.
+3. Starting from Scratch is exhausting! 
 
 ## Day 1 : Functions
 
