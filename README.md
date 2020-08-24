@@ -5,6 +5,67 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+### Day 3: Sleep Debt Calculator
+
+For day 3 I built a program that took my actual sleep per night and my ideal sleep per night and calculated if I am getting enough sleep. After doing most of the same work yesterday, today I felt way more confident and was able to write this on the second try! The only issue I experienced was syntax, I had a rogue { that I could not spot for the life of me. Thanks to JS hint, I was able to find it a bit more quickly, but the below program takes each nights hourly sleep, then it takes my ideal sleep per week. It then calculates if I am getting enough, too much, or not enough sleep, and if not enough sleep it outputs my sleep debt. I'm rocking 15 hours of sleep debt this week, per usual.
+
+``` javascript
+const getSleepHours = day =>{
+switch(day){
+  case 'monday':
+    return 7
+    break;
+  case 'tuesday':
+    return 6
+    break;
+  case 'wednesday':
+    return 6
+    break;
+  case 'thursday':
+    return 8
+    break;
+  case 'friday':
+    return 10
+    break;
+  case 'saturday':
+    return 10
+    break;
+  case 'sunday':
+    return 7
+    break;
+  default:
+  return 7
+}
+};
+const getActualSleepHours = () =>
+ getSleepHours('Monday') +
+ getSleepHours('Tuesday') + 
+ getSleepHours('Wednesday') + 
+ getSleepHours('Thursday') + 
+ getSleepHours('Friday') + 
+ getSleepHours('Saturday') + 
+ getSleepHours('Sunday');
+
+const getIdealSleepHours = () => {
+  idealHours = 8
+  return idealHours * 8
+}
+
+const calculateSleepDebt = () =>{
+  actualSleepHours = getActualSleepHours()
+  idealSleepHours = getIdealSleepHours()
+  if (actualSleepHours === idealSleepHours) {
+    console.log('You got the perf amount of sleep!')
+} else if (actualSleepHours > idealSleepHours){
+  console.log('you got a lil too much sleep') 
+}
+  else {
+  console.log('you did not get enough sleep, your sleep debt is'+(actualSleepHours - idealSleepHours));
+  }
+}
+console.log(calculateSleepDebt());
+```
+
 
 ## Day 2: Rock, Paper, Scissors
 
