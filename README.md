@@ -5,6 +5,53 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+
+### Day 4: Scope
+
+Today I spent time learning more than building, which is good. I'm building on concepts I've learned by learning more, so I guess technically I _am_ building. I already have a lot of familiarity with scope, so I felt this was a breeze. Global scope means a variable is declared _outside_ of a function, and can be accessed by any code in the program. For example, 
+
+```javascript
+const city = 'New York City';
+const logCitySkyline = () =>{
+  let skyscraper = 'Empire State Building';
+    return 'The stars over the ' + skyscraper + ' in ' + city;
+}
+console.log(logCitySkyline())
+```
+city is a global variable. Simple Enough. It seems like you would want to just make everything global, but alas, _code isnt that simple!_. I learned a ton about good practice and scope pollution. 
+
+I learned to recreate an example of _bad_ scope, here:
+``` javascript
+let num = 50;//we've declared a global variable here
+
+const logNum = () => {
+  num = 100; //see. this is reassigning the 50 to 100, but its a global variable. this can make the code funky.
+  console.log(num);
+};
+
+logNum(); 
+console.log(num); 
+```
+
+As well as good scope, _here_, because it declares the variables inside the function and reassigns them, rather than declaring a global variable and then declaring that same variable with a different value inside of the function:
+
+```javascript
+const logVisibleLightWaves = () => {
+  let lightWaves = 'Moonlight';
+	let region = 'The Arctic';
+  if(region === 'The Arctic'){
+    let lightWaves='Northern Lights'
+    console.log(lightWaves);
+};
+```
+I spent the rest of my hour of code _learning_ and reviewing the previous days concepts, since the two projects I did the two previous days have weighed on me heavily. Before I jump into coding tomorrow, I want to review, rewrite and continue to digest the following topics:
+- Conditionals
+- Functions 
+- Scope
+- Variables
+- Error Handling
+
+
 ### Day 3: Sleep Debt Calculator
 
 For day 3 I built a program that took my actual sleep per night and my ideal sleep per night and calculated if I am getting enough sleep. After doing most of the same work yesterday, today I felt way more confident and was able to write this on the second try! The only issue I experienced was syntax, I had a rogue { that I could not spot for the life of me. Thanks to JS hint, I was able to find it a bit more quickly, but the below program takes each nights hourly sleep, then it takes my ideal sleep per week. It then calculates if I am getting enough, too much, or not enough sleep, and if not enough sleep it outputs my sleep debt. I'm rocking 15 hours of sleep debt this week, per usual.
