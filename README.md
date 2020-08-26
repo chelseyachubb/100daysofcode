@@ -5,6 +5,59 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+### Day 5: Magic Eight Ball
+
+Today was short and sweet, I used some of the concepts I've learned so far to create a magic eight ball! This was one of the codeacademy challenges. Here's what I came up with: 
+
+```javascript
+let userName = ''
+if (userName) {
+  console.log `Hello ${userName}`
+} else {
+  console.log('Hello!')
+};
+const userQuestion = 'Will I lose something this weekend?';
+console.log(userQuestion);
+const randomNumber = Math.floor(Math.random()*8);
+console.log(randomNumber);
+let eightBall = '';
+
+switch(randomNumber) {
+  case 0:
+  console.log('It is certain');
+  break;
+  case 1:
+  console.log('It is decidedly so')
+  break;
+  case 2:
+  console.log('Reply hazy, try again')
+  break;
+  case 3:
+  console.log('Signs point to yes')
+  break;
+  case 4:
+  console.log('Cannot predict now')
+  break;
+  case 5:
+  console.log('Yeah Yeah, it aint gonna happen')
+  break;
+  case 6: 
+  console.log('Signs point to yes')
+  break;
+  case 7: 
+  console.log('Signs point to WHY ARE YOU TRUSTING A MAGIC EIGHT BALL')
+  break;
+  case 8:
+  console.log('nope.never.not gonna happen.')
+  break;
+default:
+  console.log('Do not count on it')
+}
+
+```
+
+Today was not so much about learning so much as it was about practicing and digesting. I felt like I have started to get the concepts and especially like switch statements probably because I understand them. I had a bit of fun with this one!
+
 
 ### Day 4: Scope
 
