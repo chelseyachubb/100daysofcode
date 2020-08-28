@@ -5,6 +5,54 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+### Day 6 The terminal	
+
+I've used the terminal/command line in quite a few roles, but my knowledge of the terminal is very minimal. I basically only have known how to do the exact things I needed to do, such as checking DNS records using DIG, like this:
+
+![dig](https://cdn.zappy.app/56c4bfd683d25601683952e93b91b75a.png)
+
+That said, I've found it super useful so I was excited to dive into the terminal/command line for today's code academy lesson. The coolest thing I learned today is how much flexibility you actually can get by using the commandline. You can write scripts, automate tasks, create directories, and *most* importantly, it's green and black so it *feels* like you're Keanu Reeves in the Matrix. Okay maybe not but whatever.
+
+The first thing I learned was to use the shell prompt, a simple $. If I wanted to then give a command to look at all the folders in the directory I am in at any given time, and list them, I would use the command 
+
+$ ls 
+
+If we wanted to then print the working directory , easy, 
+
+pwd
+
+If you want to navigate through directories, you can use cd, change directory. So if I were in my documents and wanted to navigate to pictures I could use 
+cd pictures
+
+When I pass a file or directory into a command in the terminal, similar to what I learned in passing specific values through in Javascript, it's called an argument. You can _literally_ browse all of your files and create organized directories _right_ through the terminal. This is what I've needed all of my life. ORGANIZATION!
+
+all you use is pwd to confirm where you are, and cd to change directories. 
+
+Then it gets better. 
+
+touch
+
+Touch will create a file. 
+
+So if I am in a specific directory aka folder, and I want to create a txt file called hello, 
+
+touch hello.txt
+
+![hello.txt](https://cdn.zappy.app/873bafbe41d9a703c39ed5b267c3b870.png)
+
+Nifty, right!? 
+
+The touch command creates a new file in the directory, it'll take the filename as the argument and then create an empty file. Stellar. 
+
+And that's really what I worked on today, short and sweet, the five most common commands in the Terminal:
+
+- pwd outputs the name of the current working directory.
+- ls lists all files and directories in the working directory.
+- cd switches you into the directory you specify.
+- mkdir creates a new directory in the working directory.
+- touch creates a new file inside the working directory.
+
+
 ### Day 5: Magic Eight Ball
 
 Today was short and sweet, I used some of the concepts I've learned so far to create a magic eight ball! This was one of the codeacademy challenges. Here's what I came up with: 
