@@ -46,11 +46,11 @@ The touch command creates a new file in the directory, it'll take the filename a
 
 And that's really what I worked on today, short and sweet, the five most common commands in the Terminal:
 
-- pwd outputs the name of the current working directory.
-- ls lists all files and directories in the working directory.
-- cd switches you into the directory you specify.
-- mkdir creates a new directory in the working directory.
-- touch creates a new file inside the working directory.
+- **pwd** outputs the name of the current working directory.
+- **ls** lists all files and directories in the working directory.
+- **cd** switches you into the directory you specify.
+- **mkdir** creates a new directory in the working directory.
+- **touch** creates a new file inside the working directory.
 
 
 ### Day 5: Magic Eight Ball
