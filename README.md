@@ -5,6 +5,67 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+### Day 7: Arrays
+
+Arrays are my final lesson in the CodeAcademy Javascript refresher course I'm taking, so Im excited but also _I hate arrays_. I don't even know why I hate arrays, they seem really useful, but for whatever reason I am constantly confused. My guess is that this comes from the issues I experience with line items, but I'm certain similar to Facebook Lead ads, this is something that is simple _once you know_ how it works! 
+
+An array in simple terms is an object that holds a list of values. For example, creating an array containing a grocery list might look like this:
+```javascript
+let groceryList = ['pizza', 'nuggets', 'mac n cheese'];
+
+console.log(groceryList);
+
+```
+
+The entire array is everything within the brackets, and each individual item is called an element.
+
+The output would look something like this:   
+![groceries](https://cdn.zappy.app/04d98f76233ea4bd7332b081173d4cb4.png)
+
+Cool, that literally seems like a piece of cake. Arrays can store any strings, booleans, and numbers which is pretty neat. I'm starting to see how these are cool. You can create an array by literally just wrapping the values in brackets, like this:
+```javascript
+const hobbies = ['painting','hiking','yoga'];
+
+console.log(hobbies)
+```
+The above looks _slightly_ different from the first array. That's because the array above is an array literal whereas the first array was a variable, meaning, I could declare a whole new set of NYR. I won't though, because I don't believe in NYR.
+
+Buckle up, we're reaching the part where I get confused, aka the Index. Each element in an array has a numbered position. This is known as the index. For example, in the hobbies array, the index is as follows, because an index starts with 0:  
+
+
+![hobbiesss](https://cdn.zappy.app/81fb06a8f339d3332f552ee60bfee5c7.png)
+
+You can access the individual elements like this, for example, which would return painting:  
+
+
+```javascript
+console.log(hobbies[0]);
+```
+
+Then if you wanted to change one of the hobbies in the list, for example change painting to woodworking, I could do this:
+
+
+```javascript
+let hobbies = ['painting','hiking','yoga'];
+hobbies[0] = 'woodworking'
+console.log(hobbies);
+```
+
+I could see how arrays are pretty useful now and this lesson definitely did not make me afraid of them any more which is cool. Alas tho, I also learned some things to make working with them easier!
+
+I introduce to you..the push method! Push would let us add more items to the end of the array or 'list' as I call it. If we want to remove items, we just use pop. So if I have a chore list, and I add laundry but I'm like..nah I am good I'm going to _not_ do the laundry, I would use push to add then pop to remove! Here's what that looks like:
+```javascript
+let chores = ['fold clothes','make bed', 'be a human'];
+chores.push('do laundry');
+console.log(chores);
+chores.pop();
+console.log(chores);
+```
+
+Neato!
+
+It gets CRAZIER! You can also use .join(), .slice(), .splice(), .shift(), .unshift(), and .concat()
+
 ### Day 6 The terminal	
 
 I've used the terminal/command line in quite a few roles, but my knowledge of the terminal is very minimal. I basically only have known how to do the exact things I needed to do, such as checking DNS records using DIG, like this:
