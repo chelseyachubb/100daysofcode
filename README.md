@@ -5,6 +5,87 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+
+### Day 8: Array Project, Secret Message
+
+Since I learned a TON about arrays yesterday, today I'm testing my learning by doing my Code Academy Project. 
+
+To start the project I'm given the following: 
+
+```javascript
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+```
+
+First on my list of instructions, is to remove the last item in the array. We can use the pop method to do this, like this:
+
+```javascript
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+secretMessage.pop();
+```
+
+The output will now be: 
+ ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn'];
+ 
+Next, I needed to add two separate strings to the end of the array; to and Program. I can use push to do this, so now we have:
+
+```javascript
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+secretMessage.pop();
+
+secretMessage.push('to','Program');
+```
+The result?  ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'to','Program'];
+
+Next we want to replace easily, with right.
+
+To do that we could use splice, for example:
+```javascript
+secretMessage.splice(7, 1,'right')
+```
+
+The above takes index 7 which is easily, removes 1 item from the array then replaces with right. Next, we need to remove the first item of the array, to do that we can use shift, like this:
+```javascript
+secretMessage.shift();
+```
+To recap, here's what we have so far:
+```javascript
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+secretMessage.pop();
+secretMessage.push('to','Program');
+secretMessage.splice(7, 1,'right');
+secretMessage.shift();
+console.log(secretMessage)
+```
+The output is 
+!array(https://cdn.zappy.app/0d04017937d283d4d03ef48b65d375f1.png)
+
+Cool. Let's speed up a bit! 
+
+Next we'll use a method to remove get, right, the, first, time, and replace them with only one string: know
+
+wala! Here's the full code:
+
+```javascript
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+
+secretMessage.pop();
+secretMessage.push('to','Program');
+secretMessage.splice(7, 1,'right');
+secretMessage.shift();
+secretMessage.unshift('Programming');
+secretMessage.splice(6,5,'know')
+console.log(secretMessage.join())
+```
+
+The end result? 
+
+Programming is not about what you know, it is about what you can figure out. -2015, Chris Pine, Learn to Program
+
+
+ 
 ### Day 7: Arrays
 
 Arrays are my final lesson in the CodeAcademy Javascript refresher course I'm taking, so Im excited but also _I hate arrays_. I don't even know why I hate arrays, they seem really useful, but for whatever reason I am constantly confused. My guess is that this comes from the issues I experience with line items, but I'm certain similar to Facebook Lead ads, this is something that is simple _once you know_ how it works! 
