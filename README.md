@@ -64,7 +64,22 @@ console.log(chores);
 
 Neato!
 
-It gets CRAZIER! You can also use .join(), .slice(), .splice(), .shift(), .unshift(), and .concat()
+It gets CRAZIER! You can also use .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() 
+
+Arrays can be kind of confusing IMO but I minimally appreciate them. TLDR here's what I learned:
+
+-  Arrays are lists that store data in JavaScript.
+-  Arrays are created with brackets [].
+-  Each item inside of an array is at a numbered position, or index, starting at 0.
+-  You can access one item in an array using its index, with syntax like: myArray[0].
+-  You can also change an item in an array using its index, with syntax like myArray[0] = 'new string';
+-  Arrays have their own methods, including .push() and .pop(), which add and remove items from an array,
+-  Variables that contain arrays can be declared with let or const. Even when declared with const, arrays are still mutable. However, a variable declared with const cannot be reassigned.
+-  Arrays mutated inside of a function will keep that change even outside the function.
+-  Arrays can be nested inside other arrays._oof_
+- To access elements in nested arrays chain indices using bracket notation, like this array[1][3]for example.
+
+Thats enough arrays for today.
 
 ### Day 6 The terminal	
 
