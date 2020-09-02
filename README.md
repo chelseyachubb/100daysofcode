@@ -5,6 +5,30 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+###  Day 9 LOOPS! 
+
+Today I looped so hard I froze my computer and now here we are..completely restarting my writeup for 100 days of code day 9. Fun! Today I learned about the for loop and wrote a program to compare social media followers of two people, and then output the mutual followers. 
+
+In the below code I have created two arrays, one for Bob's followers, and one for Tina's followers. I then created a third empty array for mutual followers.
+
+Then, in the for loop, I take Bob's followers and compare them to Tinas followers, and if there is a match, I push the value to the mutualFollowers array.
+
+```javascript
+const bobsFollowers = ['chels','mitch','wes','lou'];
+const tinasFollowers = ['chels','mitch','elissa'];
+const mutualFollowers = [];
+for (let i = 0; i < bobsFollowers.length; i++) {
+  for (let j = 0; j < tinasFollowers.length; j++) {
+    if (bobsFollowers[i] === tinasFollowers[j]) {
+mutualFollowers.push(tinasFollowers[j]);
+    }
+  }
+};
+console.log(mutualFollowers)
+```
+
+TLDR Today I learned basics of loops, why repeating them manually is the literal worst, how to use the for loop, looping in reverse, looping through arrays, and nested loops! Tomorrow I shall dive into while loops, do while loops and the break keyword to wrap up this weeks lesson.
+
 
 ### Day 8: Array Project, Secret Message
 
