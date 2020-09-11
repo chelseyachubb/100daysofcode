@@ -5,6 +5,32 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+### Day 10 WHALE TALK! 
+
+Today I used my knowledge of loops, and nested loops to complete a code academy project called Whale Talk!
+
+There are a few simple rules for translating text to whale language:
+
+There are no consonants. Only vowels excluding “y”.
+The u‘s and e‘s are extra long, so we must double them in our program.
+
+```javascript
+let input = 'turpentine and turtles';
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+const resultArray = [];
+for (let i = 0; i < input.length; i++){
+  for (let j = 0; j < vowels.length; j++){
+    if (input[i] === vowels[j]){
+      resultArray.push(vowels[j]);
+      if (input[i] === 'e' || input[i] === 'u'){
+        resultArray.push(input[i])
+      }
+    }
+  }
+};
+  console.log(resultArray.join('').toUpperCase());
+```
+
 ###  Day 9 LOOPS! 
 
 Today I looped so hard I froze my computer and now here we are..completely restarting my writeup for 100 days of code day 9. Fun! Today I learned about the for loop and wrote a program to compare social media followers of two people, and then output the mutual followers. 
