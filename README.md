@@ -5,6 +5,49 @@ I'll be using the following tools:
 - [Code Academy](http://codeacademy.com)
 - [Zappy](https://zapier.com/zappy)
 
+**Please note that this is my 100 days of Code, and anything in here may be incorrect or subject to..be able to be done better. This is my journey ya'll**
+
+### Day 11 Higher Order Functions
+
+Today was a doozy. Today I worked on Higher Order Functions, which are basically a function that either accepts functions as parameters, returns a function, or both. My brain is on fire. The below code first has a function that checks whether 2+2 = 4, one millllion times because Code Academy instructed me to do this. Then, I declared a function, addTwo which is num + 2. 
+
+The next bit of code is a higher-order function, timeFuncRuntime(). It takes in a function as an argument. Then, it saves a starting time, invokes the callback function, records the time after the function was called, and returns the time the function took to run by subtracting the starting time from the ending time. This was all extremely complicated for me, so I am reviewing with more practice as I basically followed baby step by baby step exactly what Code Academy instructed me to do. That said, here was what I was able to work out:
+
+```javascript 
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
+  for(let i = 1; i <= 1000000; i++) {
+    if ( (2 + 2) != 4) {
+      console.log('Something has gone very wrong :( ');
+    }
+  }
+};
+
+const addTwo = num => num + 2;
+
+const timeFuncRuntime = funcParameter => {
+  let t1 = Date.now();
+  funcParameter();
+  let t2 = Date.now();
+  return t2 - t1;
+}
+
+const time2p2 = timeFuncRuntime(checkThatTwoPlusTwoEqualsFourAMillionTimes);
+
+const checkConsistentOutput = (func, val) => {
+    let firstTry = func(val);
+    let secondTry = func(val);
+    if (firstTry === secondTry) {
+        return firstTry;
+    } else {
+        return 'This function returned inconsistent results';
+    }
+};
+checkConsistentOutput(addTwo,2);
+
+```
+The cool thing I'm learning about higher order functions is that it allows you to write code that is quite complex, but able to be easily debugged, reused and understandable for we humans. Functions can still be worked with the same way we work with other variables. While I enjoy that functions can be passed into other functions as parameters, creating a much wider range of capabilities, I full on _do not get it_. I'm going to let this sink in, and practice this exact Code Academy lesson again tomorrow, and perhaps the following few days until it clicks, but it will click, eventually.
+
+
 ### Day 10 WHALE TALK! 
 
 Today I used my knowledge of loops, and nested loops to complete a code academy project called Whale Talk!
