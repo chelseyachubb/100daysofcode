@@ -7,6 +7,58 @@ I'll be using the following tools:
 
 **Please note that this is my 100 days of Code, and anything in here may be incorrect or subject to..be able to be done better. This is my journey ya'll**
 
+### Day 12 Iterators!
+
+The word iterate just makes me _feel_ smarter so I already have that going for me. Today I created another secret message, aka Hello World, by using the .map method.
+
+When .map() is called on an array, it takes an argument of a callback function and returns a new array, then I used the join function to join the array, to output HelloWorld. Atleast that is what I think this does!
+
+```javascript
+const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+
+// Create the secretMessage array below
+const secretMessage = animals.map(animal => animal[0]);
+
+console.log(secretMessage.join(''));
+```
+
+I also learned about filter, which is similar to map, only, like it suggests, it filters and returns only specific elements within the array. 
+
+For example, I filtered out favorite words for any words >7 characters long with the below code:
+
+```javascript
+
+const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+const longFavoriteWords = favoriteWords.filter(word => {
+  return word.length > 7;
+})
+console.log(longFavoriteWords)
+```
+
+I also learned to use the index method to figure out where a string falls in an array. For example, if we have the array ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+ and I need to know where elephant falls in the array, I could use the below code, which would return 7, which makes sense because the index starts at 0.
+
+```javascript
+const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+
+const foundAnimal = animals.findIndex(num => {
+  return num === 'elephant';
+});
+console.log(foundAnimal)
+```
+
+I could get even fancier and find just the first animal starting with S by using the below
+
+```javascript
+const startsWithS = animals.findIndex(animal => {
+  return animal[0] === 's' ? true : false;
+});
+
+```
+
+Today I was a little burnt out, so I am calling it good there and reviewing! 
+
 ### Day 11 Higher Order Functions
 
 Today was a doozy. Today I worked on Higher Order Functions, which are basically a function that either accepts functions as parameters, returns a function, or both. My brain is on fire. The below code first has a function that checks whether 2+2 = 4, one millllion times because Code Academy instructed me to do this. Then, I declared a function, addTwo which is num + 2. 
