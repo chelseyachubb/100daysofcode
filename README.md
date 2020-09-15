@@ -61,7 +61,22 @@ Today I was a little burnt out, so I am calling it good there and reviewing!
 
 ### Day 11 Higher Order Functions
 
-Today was a doozy. Today I worked on Higher Order Functions, which are basically a function that either accepts functions as parameters, returns a function, or both. My brain is on fire. The below code first has a function that checks whether 2+2 = 4, one millllion times because Code Academy instructed me to do this. Then, I declared a function, addTwo which is num + 2. 
+Today was a doozy. Today I worked on Higher Order Functions, which are basically a function that either accepts functions as parameters, returns a function, or both. My brain is on fire. 
+
+The one cool way that it brought it all together was by explaining that we as humans make a whole lot of assumptions, and we cannot assume a computer knows something abstract. Like, for example, when I say bake in a conversation about making a cake, you probably understand exactly what I mean. A computer does not know what bake is by default, or share our common language. So when I say I baked a cake, you know I preheated the oven, prepared the cake, inserted the cake, and then removed the cake and let it cool. A computer can't possibly get that! For this reason, with computers, we have functions, which are how we accomplish abstraction, or rather, the concept of dealing with ideas vs events.
+
+For example, if I say count to three. You know what I mean but in code, we could tell a computer how to count to three like this:
+
+```javascript
+for (let i = 1; i<=3; i++) {
+  console.log(i)
+}
+};
+```
+Cool. I kind of get that! So I moved on to the whole picture aka creating a higher order function, which I _kinnddd_ of get. 
+
+
+The below code first has a function that checks whether 2+2 = 4, one millllion times because Code Academy instructed me to do this. Then, I declared a function, addTwo which is num + 2. 
 
 The next bit of code is a higher-order function, timeFuncRuntime(). It takes in a function as an argument. Then, it saves a starting time, invokes the callback function, records the time after the function was called, and returns the time the function took to run by subtracting the starting time from the ending time. This was all extremely complicated for me, so I am reviewing with more practice as I basically followed baby step by baby step exactly what Code Academy instructed me to do. That said, here was what I was able to work out:
 
