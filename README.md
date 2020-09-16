@@ -7,6 +7,10 @@ I'll be using the following tools:
 
 **Please note that this is my 100 days of Code, and anything in here may be incorrect or subject to..be able to be done better. This is my journey ya'll**
 
+### Day 13...ITERATORS!
+
+Fitting that I would have to do this lesson again! Today I am spent time reading back over the iterator lesson, I wasn't quite ready to move on. Nothing new to report here but just a repetition of yesterday's lessons. 
+
 ### Day 12 Iterators!
 
 The word iterate just makes me _feel_ smarter so I already have that going for me. Today I created another secret message, aka Hello World, by using the .map method.
