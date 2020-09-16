@@ -7,6 +7,36 @@ I'll be using the following tools:
 
 **Please note that this is my 100 days of Code, and anything in here may be incorrect or subject to..be able to be done better. This is my journey ya'll**
 
+### Day 14 Iterators... 
+
+This joke is getting old but again, I practiced iterators! In this code I basically used the prompts to ensure I was using the right method each time for the right scenario using their commented out text, like this:
+
+```javascript
+const cities = ['Orlando', 'Dubai', 'Edinburgh', 'Chennai', 'Accra', 'Denver', 'Eskisehir', 'Medellin', 'Yokohama'];
+
+const nums = [1, 50, 75, 200, 350, 525, 1000];
+
+//  Choose a method that will return undefined
+cities.forEach(city => console.log('Have you visited ' + city + '?'));
+
+// Choose a method that will return a new array
+const longCities = cities.filter(city => city.length > 7);
+
+// Choose a method that will return a single value
+const word = cities.reduce((acc, currVal) => {
+  return acc + currVal[0]
+}, "C");
+
+console.log(word)
+
+// Choose a method that will return a new array
+const smallerNums = nums.map(num => num - 5);
+
+// Choose a method that will return a boolean value
+nums.every(num => num < 0);
+```
+It's not much to look at but using the right methods was time consuming and required a ton of attention to detail and remembering things I learned two days ago, on my part, so I am happy with progress on that! 
+
 ### Day 13...ITERATORS!
 
 Fitting that I would have to do this lesson again! Today I am spent time reading back over the iterator lesson, I wasn't quite ready to move on. Nothing new to report here but just a repetition of yesterday's lessons. 
