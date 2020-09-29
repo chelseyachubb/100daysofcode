@@ -7,6 +7,176 @@ I'll be using the following tools:
 
 **Please note that this is my 100 days of Code, and anything in here may be incorrect or subject to..be able to be done better. This is my journey ya'll**
 
+### Day 15 - Mini-Linter Project
+
+I took a bit of a hiatus from 100 days of code, but not necessarily from code, as Ive been working internally on some projects with my technical mentor, so I might argue that I likely did _more_ code but wrote about it less. That said, I'm picking it back up because writing about what you do helps think through why you're doing what you're doing! Today I created a mini-linter, to practice iterating over an array!
+
+First I was given the following:
+```javascript
+let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';
+
+let overusedWords = ['really', 'very', 'basically'];
+
+let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+```
+eek. in order to iterate over it, I need the story to be in array form first! I can do that by creating an array called storyWords, like this:
+```javascript
+let storyWords = story.split(' ');
+```
+To make sure I did it right, I always use console.log,
+```javascript
+let storyWords = story.split(' ');
+console.log(storyWords);
+```
+
+![storywordarray](https://cdn.zappy.app/4ac53fbe5b25370e49547bdf13e6a764.png)
+
+Right on! 
+
+Next, let's log the total words before we iterate over the array using the uneccessaryWords and overusedWords. To do that I'd just update my console.log(storyWords) to:
+
+```javascript
+console.log(storyWords.length);
+```
+
+Wala, 188 words!
+
+Now, if I want to know how many times I used the words really, basically and very, I could do something like this:
+```javascript
+let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';
+
+let overusedWords = ['really', 'very', 'basically'];
+
+let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+
+let storyWords = story.split(' '); 
+// console.log(storyWords);
+//console.log(storyWords.length)
+
+let betterWords = 
+storyWords.filter(function(word){
+return !unnecessaryWords.includes(word)
+})
+
+let reallyCount = 0
+let veryCount = 0
+let basicallyCount = 0
+
+for (word of storyWords){
+  if (word === 'really') {
+    reallyCount += 1
+  } else if (word === 'very'){
+    veryCount += 1
+  } else if (word === 'basically'){
+    basicallyCount += 1
+  }
+}
+
+
+console.log('You used really '+reallyCount+' times')
+console.log('You used basically '+basicallyCount+' times')
+console.log('You used very ' +veryCount+' times')
+```
+The output?  
+
+![reallyverybasically](https://cdn.zappy.app/67c11b90726104c4e573778e70e725c7.png). 
+
+Cool.  
+
+Then, if I wanted to count sentences, I could create a function to iterate over how many words end in a period, or exclamation point, because in looking at the paragraph there are no question marks. Here's how I could achieve that:
+
+```javascript
+let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';
+
+let overusedWords = ['really', 'very', 'basically'];
+
+let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+
+let storyWords = story.split(' '); 
+// console.log(storyWords);
+//console.log(storyWords.length)
+
+let betterWords = 
+storyWords.filter(function(word){
+return !unnecessaryWords.includes(word)
+})
+
+let reallyCount = 0
+let veryCount = 0
+let basicallyCount = 0
+
+for (word of storyWords){
+  if (word === 'really') {
+    reallyCount += 1
+  } else if (word === 'very'){
+    veryCount += 1
+  } else if (word === 'basically'){
+    basicallyCount += 1
+  }
+}
+
+let sentenceCount = 0
+
+for(word of storyWords) {
+  if(word[word.length - 1] ==='.' || word[word.length - 1] === '!') {
+    sentenceCount += 1
+  }
+}
+console.log(sentenceCount);
+
+```
+
+...and the answer issss 12 which I also tested by literally manually counting, boom! 
+
+Finally, to return the betterWords in a string without the unnecessary words, I could write something like this:
+```javascript
+let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';
+
+let overusedWords = ['really', 'very', 'basically'];
+
+let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+
+let storyWords = story.split(' '); 
+// console.log(storyWords);
+//console.log(storyWords.length)
+
+let betterWords = 
+storyWords.filter(function(word){
+return !unnecessaryWords.includes(word)
+})
+
+let reallyCount = 0
+let veryCount = 0
+let basicallyCount = 0
+
+for (word of storyWords){
+  if (word === 'really') {
+    reallyCount += 1
+  } else if (word === 'very'){
+    veryCount += 1
+  } else if (word === 'basically'){
+    basicallyCount += 1
+  }
+}
+
+let sentenceCount = 0
+
+for(word of storyWords) {
+  if(word[word.length - 1] ==='.' || word[word.length - 1] === '!') {
+    sentenceCount += 1
+  }
+}
+
+var joinWords = betterWords.join();
+var finalWords = joinWords.replace(/,/g,' ')
+console.log(finalWords)
+```
+
+This was one of the challenges I enjoyed most, just because I could see how it would be super helpful to create a linter, either in regular writing, ie papers, emails, books, etc, or in code. I dug it!
+
+That's it for today, here's the final paragraph:
+![final](https://cdn.zappy.app/d2f2d40b77ae218d073a05103b5cccc5.png)
+
 ### Day 14 Iterators... 
 
 This joke is getting old but again, I practiced iterators! In this code I basically used the prompts to ensure I was using the right method each time for the right scenario using their commented out text, like this:
